@@ -116,13 +116,12 @@ const createList = (availableItems) => {
   const newItemList = [];
   availableItems.forEach((item) => {
     if (item.available === true) {
-      newItemList.push(item.available.name);
+      newItemList.push(item.name);
       // Can't figure this one out.. Guessing at this point.
     }
   });
   return newItemList;
 };
-
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
@@ -138,7 +137,21 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // NEXT TIME
+  const newArr = [];
+  arr.forEach((item) => {
+    if (item % 3 === 0) {
+      newArr.push("Fizz");
+    }
+    if (item % 5 === 0) {
+      newArr.push("Buzz");
+    }
+    if (item % 15 === 0) {
+      newArr.push("Fizz Buzz");
+    } else {
+      newArr.push(item);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
