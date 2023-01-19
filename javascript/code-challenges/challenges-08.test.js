@@ -53,8 +53,6 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
-
   let sorted = charArray.sort((a, b) => {
     if (a.children.length > b.children.length) {
       return 1;
@@ -79,7 +77,6 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
   let regex = /w/;
   return regex.test(str);
 };
@@ -124,10 +121,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   let regex = /[A-Z]\w+/g;
-  let newArr = str.match(regex);
+  let newArr = [];
+  let regexMatch = str.match(regex);
+  if (regexMatch) {
+    newArr.push(...regexMatch);
+  }
   return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
