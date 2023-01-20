@@ -41,7 +41,6 @@ const courseInfo = {
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
   return Object.keys(obj);
 };
 
@@ -54,7 +53,6 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
   let arr = Object.values(obj);
   return arr.includes(value);
 };
@@ -79,7 +77,6 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
   let arr = Object.entries(obj);
   let newArr = [];
   arr.forEach((item) => {
@@ -139,7 +136,6 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
   arr.forEach((item) => {
     houses.push(item.house);
   });
@@ -158,20 +154,16 @@ For example:
 hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
-
 const hasChildrenValues = (arr, character) => {
-  let newArr = [];
-  arr.forEach((item) => {
-    if (item.name === character) {
-      newArr.push(item);
+  let children = true;
+  arr.forEach((person) => {
+    if (person.name === character) {
+      if (!person.children) {
+        children = false;
+      }
     }
   });
-  let children = Object.values(newArr[0]);
-  if (children[2]) {
-    return true;
-  } else {
-    return false;
-  }
+  return children;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -211,6 +203,21 @@ const houseSize = (arr) => {
   // Solution code here...
   return sizes;
 };
+
+// const hasChildrenValues = (arr, character) => {
+//   let newArr = [];
+//   arr.forEach((item) => {
+//     if (item.name === character) {
+//       newArr.push(item);
+//     }
+//   });
+//   let children = Object.values(newArr[0]);
+//   if (children[2]) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
