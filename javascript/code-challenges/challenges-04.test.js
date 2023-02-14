@@ -97,7 +97,11 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {};
+const sortByPrice = (arr) => {
+  var newArr = arr.sort((a, b) => a.price - b.price);
+
+  return newArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
