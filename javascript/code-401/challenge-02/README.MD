@@ -1,16 +1,13 @@
-# Code 401 Challenge 01 - Reverse Array
+# Code 401 Challenge 2 - Insert to Middle of an Array
 
 ## Objective
 
-Build a  function called reverseArray which takes an array as an argument. Unablle to use any of the built-in methods available to JavaScript, return an array with elements in reversed order.
-
+Write a function called insertShiftArray which takes in an array and a value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 ### Whiteboard Process
 
 
-
+![challenge2](./challange-2.png)
 
 Approach & Efficiency
 
-We used inVision to write out the problem domain and visualize the problem.
-We used an algorithm to write out the process of what we wanted our code to do.
-
+I used Figma to write out the problem domain and visualize the problem.
