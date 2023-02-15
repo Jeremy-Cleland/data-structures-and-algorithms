@@ -6,8 +6,7 @@ Build a  function called reverseArray which takes an array as an argument. Unabl
 
 ### Whiteboard Process
 
-
-
+![challenge1](./challange-1.png)
 
 Approach & Efficiency
 
