@@ -1,6 +1,5 @@
 'use strict';
 
-// Require our linked list implementation
 const LinkedList = require('../index');
 
 describe('Linked List', () => {
@@ -10,7 +9,15 @@ describe('Linked List', () => {
     expect(ll.head).toBeNull();
   });
 
-  test('insertion of node into an empty linked list', () => {
+  test('It should insert at the head of empty list', () => {
+    const ll = new LinkedList();
+    ll.insert('Node 1');
+
+    expect(ll.head.value).toEqual('Node 1');
+    expect(ll.head.next).toBeNull();
+  });
+
+  test('append node to end of the linked list', () => {
     const ll = new LinkedList();
     ll.insert('Node 1');
 
@@ -52,5 +59,36 @@ describe('Linked List', () => {
     ll.insert('Node 2');
 
     expect(ll.includes('Node 3')).toBe(false);
+  });
+
+  test('it should add a node before a node witha given value', () => {
+    const ll = new LinkedList();
+    ll.append('Node 1');
+    ll.append('Node 2');
+    ll.append('Node 3');
+    ll.append('Node 4');
+    ll.insertBefore('Node 2', 'insertBefore');
+
+    expect(ll.tail.value).toEqual('Node 4');
+
+    const llString = ll.toString();
+
+    expect(llString).toEqual(
+      '[ Node 1 ] -> [ insertBefore ] -> [ Node 2 ] -> [ Node 3 ] -> [ Node 4 ] -> NULL'
+    );
+  });
+
+  test('it should add a node after a node with a given value', () => {
+    const ll = new LinkedList();
+    ll.append('Node 1');
+    ll.append('Node 2');
+    ll.append('Node 3');
+    ll.append('Node 4');
+    ll.insertAfter('Node 3', 'insertAfter');
+
+    const llString = ll.toString();
+    expect(llString).toEqual(
+      '[ Node 1 ] -> [ Node 2 ] -> [ Node 3 ] -> [ insertAfter ] -> [ Node 4 ] -> NULL'
+    );
   });
 });
