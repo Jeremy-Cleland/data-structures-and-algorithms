@@ -112,6 +112,23 @@ class LinkedList {
     return current.value;
   }
 }
+
+const zipLists = (ll1, ll2) => {
+  let current1 = ll1.head;
+  let current2 = ll2.head;
+  const ll3 = new LinkedList();
+  while (current1 || current2) {
+    if (current1) {
+      ll3.append(current1.value);
+      current1 = current1.next;
+    }
+    if (current2) {
+      ll3.append(current2.value);
+      current2 = current2.next;
+    }
+  }
+  return list3;
+};
 class LinkedListNode {
   constructor(value, next) {
     this.value = value;
@@ -119,4 +136,4 @@ class LinkedListNode {
   }
 }
 
-module.exports = LinkedList;
+module.exports = { LinkedList, zipLists };

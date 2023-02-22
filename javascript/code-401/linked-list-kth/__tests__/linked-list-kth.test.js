@@ -92,41 +92,37 @@ describe('Linked List', () => {
 
   test('Should return the value of the node kth away from the end of the list', () => {
     const list = new LinkedList();
-    list.append('apple');
-    list.append('orange');
-    list.append('kiwi');
-    list.append('mango');
-    list.append('pineapple');
-    list.append('carrot');
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.append(4);
 
     expect(list.kthFromEnd(7)).toEqual('Exception');
     expect(list.kthFromEnd(6)).toEqual('Exception');
-    expect(list.kthFromEnd(5)).toEqual('apple');
-    expect(list.kthFromEnd(4)).toEqual('orange');
-    expect(list.kthFromEnd(3)).toEqual('kiwi');
-    expect(list.kthFromEnd(2)).toEqual('mango');
-    expect(list.kthFromEnd(1)).toEqual('pineapple');
-    expect(list.kthFromEnd(0)).toEqual('carrot');
+    expect(list.kthFromEnd(3)).toEqual(1);
+    expect(list.kthFromEnd(2)).toEqual(2);
+    expect(list.kthFromEnd(1)).toEqual(3);
+    expect(list.kthFromEnd(0)).toEqual(4);
   });
 
   test('should zip 2 existing linked lists', () => {
-    const list1 = new LinkedList();
-    const list2 = new LinkedList();
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
 
-    list1.append('apple');
-    list1.append('orange');
-    list1.append('kiwi');
-    list2.append('mango');
-    list2.append('pineapple');
-    list2.append('carrot');
+    ll1.append('1a');
+    ll1.append('2a');
+    ll1.append('3a');
+    ll2.append('1b');
+    ll2.append('2b');
+    ll2.append('3b');
 
-    const list3 = zipLists(list1, list2);
+    const ll3 = zipLists(ll1, ll2);
 
-    expect(list3.head.value).toEqual('apple');
-    expect(list3.head.next.value).toEqual('mango');
-    expect(list3.head.next.next.value).toEqual('orange');
-    expect(list3.head.next.next.next.value).toEqual('pineapple');
-    expect(list3.head.next.next.next.next.value).toEqual('kiwi');
-    expect(list3.head.next.next.next.next.next.value).toEqual('carrot');
+    expect(ll3.head.value).toEqual('1a');
+    expect(ll3.head.next.value).toEqual('1b');
+    expect(ll3.head.next.next.value).toEqual('2a');
+    expect(ll3.head.next.next.next.value).toEqual('2b');
+    expect(ll3.head.next.next.next.next.value).toEqual('3a');
+    expect(ll3.head.next.next.next.next.next.value).toEqual('3b');
   });
 });
