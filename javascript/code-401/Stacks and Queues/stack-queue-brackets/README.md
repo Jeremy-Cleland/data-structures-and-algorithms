@@ -14,9 +14,6 @@ There are 3 types of brackets:
 - Square Brackets : []
 
 - Curly Brackets : {}
-
-## Methods:
-
 ### validateBrackets
 
 - Arguments: string
