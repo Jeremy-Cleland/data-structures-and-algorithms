@@ -28,7 +28,7 @@ Implement the following methods:
 
 ## Queue Visualization
 
-[code challenge 11](./img/stack-and-queues.png)
+![code challenge 11](./img/stack-and-queues.png)
 
 
 Worked on Problem with Jordan Covington, Ty Aponte, Adrienne Frey, Joe Davitt
