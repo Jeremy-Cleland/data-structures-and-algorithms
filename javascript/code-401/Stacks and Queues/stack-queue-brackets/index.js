@@ -103,12 +103,12 @@ function validateBrackets(str) {
       }
     }
   }
-
   return true;
 }
 
-validateBrackets('{[(([]))]}');
+// validateBrackets('{}');
 module.exports = {
   Stack,
   Queue,
+  validateBrackets,
 };
