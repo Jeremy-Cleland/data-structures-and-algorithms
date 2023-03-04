@@ -56,4 +56,4 @@ Write tests to prove the following functionality:
 
 ## Queue Visualization
 
-![code challenge 11](./img/stack-and-queues.png)
+![code challenge 11](./img/tree.png)
