@@ -40,20 +40,20 @@ Challenge Setup & Execution
 
 Write tests to prove the following functionality:
 
-[] Can successfully instantiate an empty tree
+[x] Can successfully instantiate an empty tree
 
-[] Can successfully instantiate a tree with a single root node
+[x] Can successfully instantiate a tree with a single root node
 
-[] For a Binary Search Tree, can successfully add a left child and right child properly to a node
+[x] For a Binary Search Tree, can successfully add a left child and right child properly to a node
 
-[] Can successfully return a collection from a preorder traversal
+[x] Can successfully return a collection from a preorder traversal
 
-[] Can successfully return a collection from an inorder traversal
+[x] Can successfully return a collection from an inorder traversal
 
-[] Can successfully return a collection from a postorder traversal
+[x] Can successfully return a collection from a postorder traversal
 
-[] Returns true false for the contains method, given an existing or non-existing node value
+[x] Returns true false for the contains method, given an existing or non-existing node value
 
 ## Queue Visualization
 
-![code challenge 11](./img/tree.png)
+![code challenge 15](./img/tree.png)
