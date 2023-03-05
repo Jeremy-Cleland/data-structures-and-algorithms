@@ -88,7 +88,7 @@ describe('Queue', () => {
     queue.enqueue(1);
     queue.enqueue(2);
 
-    expect(queue.front.value).toEqual(1);
+    expect(queue.first.value).toEqual(1);
   });
 
   test('Can successfully dequeue out of a queue the expected value', () => {
@@ -98,7 +98,7 @@ describe('Queue', () => {
     let dqNode = queue.dequeue();
     expect(dqNode).toEqual(1);
 
-    expect(queue.front.value).toEqual(2);
+    expect(queue.first.value).toEqual(2);
   });
 
   test('Can successfully peek into a queue, seeing the expected value', () => {
@@ -107,7 +107,7 @@ describe('Queue', () => {
     queue.enqueue(2);
     let peekedNode = queue.peek();
     expect(peekedNode.value).toEqual(1);
-    expect(queue.front.value).toEqual(1);
+    expect(queue.first.value).toEqual(1);
   });
   test('Can successfully empty a queue after multiple dequeues', () => {
     const queue = new Queue();
@@ -117,7 +117,7 @@ describe('Queue', () => {
     queue.dequeue();
     queue.dequeue();
 
-    expect(queue.front).toBeNull();
+    expect(queue.first).toBeNull();
   });
 
   test('Calling dequeue or peek on empty queue raises exception', () => {
@@ -128,7 +128,7 @@ describe('Queue', () => {
     queue.dequeue();
     queue.dequeue();
 
-    expect(queue.front).toBeNull();
+    expect(queue.first).toBeNull();
   });
 
   it('Can validate brackets', () => {

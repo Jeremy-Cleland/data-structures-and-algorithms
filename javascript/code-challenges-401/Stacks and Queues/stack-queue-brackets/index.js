@@ -7,39 +7,39 @@ class Node {
 //$ *********************** Queue Implementation ***********************
 class Queue {
   constructor() {
-    this.front = null;
-    this.rear = null;
+    this.first = null;
+    this.last = null;
   }
   enqueue(value) {
     let newNode = new Node(value);
-    if (this.front) {
-      this.rear.next = newNode;
+    if (this.first) {
+      this.last.next = newNode;
     } else {
-      this.front = newNode;
+      this.first = newNode;
     }
-    this.rear = newNode;
+    this.last = newNode;
   }
 
   dequeue() {
     let temp = null;
-    if (this.front) {
-      temp = this.front.value;
-      if (this.front === this.rear) {
-        this.rear = null;
+    if (this.first) {
+      temp = this.first.value;
+      if (this.first === this.last) {
+        this.last = null;
       }
-      this.front = this.front.next;
+      this.first = this.first.next;
     }
     return temp;
   }
   peek() {
-    if (this.front) {
-      return this.front;
+    if (this.first) {
+      return this.first;
     } else {
       return null;
     }
   }
   isEmpty() {
-    return this.front === null;
+    return this.first === null;
   }
 }
 
