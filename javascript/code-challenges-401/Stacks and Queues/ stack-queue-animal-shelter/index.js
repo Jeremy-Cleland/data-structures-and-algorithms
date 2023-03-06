@@ -7,39 +7,39 @@ class Node {
 //$ *********************** Queue Implementation ***********************
 class Queue {
   constructor() {
-    this.front = null;
-    this.rear = null;
+    this.first = null;
+    this.last = null;
   }
   enqueue(value) {
     let newNode = new Node(value);
-    if (this.front) {
-      this.rear.next = newNode;
+    if (this.first) {
+      this.last.next = newNode;
     } else {
-      this.front = newNode;
+      this.first = newNode;
     }
-    this.rear = newNode;
+    this.last = newNode;
   }
 
   dequeue() {
     let temp = null;
-    if (this.front) {
-      temp = this.front.value;
-      if (this.front === this.rear) {
-        this.rear = null;
+    if (this.first) {
+      temp = this.first.value;
+      if (this.first === this.last) {
+        this.last = null;
       }
-      this.front = this.front.next;
+      this.first = this.first.next;
     }
     return temp;
   }
   peek() {
-    if (this.front) {
-      return this.front;
+    if (this.first) {
+      return this.first;
     } else {
       return null;
     }
   }
   isEmpty() {
-    return this.front === null;
+    return this.first === null;
   }
 }
 
@@ -97,44 +97,44 @@ class AnimalShelter {
   enqueue(name, species) {
     let newAnimal = new Animal(name, species);
     if (species === 'cat') {
-      if (!this.cats.front) {
-        this.cats.front = newAnimal;
-        this.cats.rear = newAnimal;
+      if (!this.cats.first) {
+        this.cats.first = newAnimal;
+        this.cats.last = newAnimal;
       } else {
-        this.cats.rear.next = newAnimal;
-        this.cats.rear = newAnimal;
+        this.cats.last.next = newAnimal;
+        this.cats.last = newAnimal;
       }
     }
     if (species === 'dog') {
-      if (!this.dogs.front) {
-        this.dogs.front = newAnimal;
-        this.dogs.rear = newAnimal;
+      if (!this.dogs.first) {
+        this.dogs.first = newAnimal;
+        this.dogs.last = newAnimal;
       } else {
-        this.dogs.rear.next = newAnimal;
-        this.dogs.rear = newAnimal;
+        this.dogs.last.next = newAnimal;
+        this.dogs.last = newAnimal;
       }
     }
   }
 
   dequeue(species) {
     if (species === 'cat') {
-      if (!this.cats.front) {
+      if (!this.cats.first) {
         return null;
       }
 
-      let temp = this.cats.front;
-      this.cats.front = this.cats.front.next;
+      let temp = this.cats.first;
+      this.cats.first = this.cats.first.next;
       temp.next = null;
       return temp;
     }
 
     if (species === 'dog') {
-      if (!this.dogs.front) {
+      if (!this.dogs.first) {
         return null;
       }
 
-      let temp = this.dogs.front;
-      this.dogs.front = this.dogs.front.next;
+      let temp = this.dogs.first;
+      this.dogs.first = this.dogs.first.next;
       temp.next = null;
       return temp;
     }

@@ -11,11 +11,11 @@
 
 - **Dequeue** - Nodes or items that are removed from the queue. If called when the queue is empty an exception will be raised.
 
-- **Front** - This is the front/first Node of the queue.
+- **first** - This is the first/first Node of the queue.
 
-- **Rear** - This is the rear/last Node of the queue.
+- **last** - This is the last/last Node of the queue.
 
-- **Peek** - When you peek you will view the value of the front Node in the queue. If called when the queue is empty an exception will be raised.
+- **Peek** - When you peek you will view the value of the first Node in the queue. If called when the queue is empty an exception will be raised.
 
 - **IsEmpty** - returns true when queue is empty otherwise returns false.
 
@@ -50,8 +50,8 @@ A pushdown stack (or just a stack) is a collection that is based on the last-in-
 
 ### Queue Methods
 
-- Create a Queue class that has a front property. It creates an empty Queue when instantiated.
-- This object should be aware of a default empty value assigned to front when the queue is created.
+- Create a Queue class that has a first property. It creates an empty Queue when instantiated.
+- This object should be aware of a default empty value assigned to first when the queue is created.
 - The class should contain the following methods:
 
 #### Enqueue
@@ -62,14 +62,14 @@ A pushdown stack (or just a stack) is a collection that is based on the last-in-
 #### Dequeue
 
 - Arguments: none
-- Returns: the value from node from the front of the queue
-- Removes the node from the front of the queue
+- Returns: the value from node from the first of the queue
+- Removes the node from the first of the queue
 - Should raise exception when called on empty queue
 
 #### Peek
 
 - Arguments: none
-- Returns: Value of the node located at the front of the queue
+- Returns: Value of the node located at the first of the queue
 - Should raise exception when called on empty stack
 
 #### isEmpty
