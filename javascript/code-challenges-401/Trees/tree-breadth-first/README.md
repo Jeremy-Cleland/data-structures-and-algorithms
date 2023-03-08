@@ -34,4 +34,4 @@ Write tests to prove the following functionality:
 
 ## Queue Visualization
 
-![code challenge 16](./img/tree-breadth-first.png)
+![code challenge 17](./img/tree-breadth-first.png)
