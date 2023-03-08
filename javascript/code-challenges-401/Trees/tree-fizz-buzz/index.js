@@ -162,16 +162,6 @@ class BinarySearchTree extends BinaryTree {
     return tree;
   }
 }
-
-// let tree1 = new BinarySearchTree();
-// tree1.add(5);
-// tree1.add(3);
-// tree1.add(15);
-// tree1.add(20);
-// tree1.add(7);
-// tree1.add(9);
-// tree1.add(10);
-
 module.exports = {
   BinarySearchTree,
   BinaryTree,
