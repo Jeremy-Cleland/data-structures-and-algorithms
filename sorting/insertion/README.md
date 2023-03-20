@@ -4,7 +4,8 @@
 
 Insertion sort gradually sorts by starting at the second element of the array and swaps if the next element is smaller. The left side which is sorted will grow as the algorithm continues.
 
-## [Blog Post Link]()
+## [Blog Post Link](https://jeremycleland.notion.site/Insertion-Sort-a64566564bd24b1c90b1dac45a1675ca)
+
 ---
 
 ## Insertion Sort Pseudocode
