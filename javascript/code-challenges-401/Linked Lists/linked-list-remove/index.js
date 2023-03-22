@@ -150,6 +150,30 @@ function removeValue(list, value) {
   }
 }
 
+// Challenge 2
+// write a function that takes in a linked list and a callback. traverse that linked list, feed every node.value to the callback as an argument to acheive your goal.  Note: your function may need a bit more if using the toArray callback.  another variable? a return?
+
+// callbacks:
+// console.log     // log every value
+// logger          // log every value
+// toArray         // push every value into an array
+
+const list = new LinkedList();
+list.insert(1);
+list.insert(2);
+list.insert(3);
+list.insert(4);
+list.insert(5);
+
+function traverse(list, callback) {
+  let current = list.head;
+  while (current) {
+    callback(current.value);
+    current = current.next;
+  }
+}
+
+traverse(list, console.log);
 class Node {
   constructor(value, next = null) {
     this.value = value;
