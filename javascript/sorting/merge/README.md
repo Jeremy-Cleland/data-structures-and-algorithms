@@ -2,6 +2,8 @@
 
 First thing we will need to do is create a helper function to help us with this sorting algorithms
 
+## [Blog Post](https://www.notion.so/jeremycleland/MergeSort-0b542afdf8674d458cb480b5a4e9ea87?pvs=4)
+
 ## Merging Arrays Pseudocode
 
 - Create an empty array and then look at the smallest values in each input array.
