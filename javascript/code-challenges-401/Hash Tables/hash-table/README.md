@@ -11,8 +11,9 @@ Implementation of a Hash Table in JavaScript with the functions
 
 ## Whiteboard Process
 
-![code challenge 11](./img/HashTable.png)
+![code challenge 30](./img/HashTable.png)
 
+![code challenge 31](./img/repeatedWord.png)
 ## Approach & Efficiency
 
 ___
@@ -77,6 +78,12 @@ ____
 
   - Arguments: key
   - Returns: Index in the collection for that key
+
+### repeatedWord
+
+- Write a function called repeated word that finds the first word to occur more than once in a string
+  - Arguments: string
+  - Return: string
 
 ___
 
@@ -194,6 +201,40 @@ ___
   it('Successfully hash a key to an in-range value', () => {
     const hashTable = new HashTable();
     expect(hashTable._hash('key1')).toBeLessThanOrEqual(61);
+  });
+
+```
+
+### Tests | repeatedWords
+___
+
+
+``` js
+
+  it('Tests that the function correctly returns the first repeated word encountered in the input', () => {
+    const str = 'hello world hello world';
+    expect(repeatedWord(str)).toEqual('hello');
+  });
+
+```
+___
+
+``` js
+
+  it('Tests that the function treats words with different capitalization as different words.', () => {
+    const str = 'Hello world hello';
+    const str2 = 'wolrd World woRld';
+    expect(repeatedWord(str)).toEqual(null);
+    expect(repeatedWord(str2)).toEqual(null);
+  });
+
+```
+___
+
+``` js
+  it('Tests that the function returns null when given a string with no repeated words', () => {
+    expect(repeatedWord('This is a test string')).toBe(null);
+    expect(repeatedWord('No repeated words here')).toBe(null);
   });
 
 ```
