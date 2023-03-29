@@ -33,18 +33,19 @@ class HashTable {
   //   }
   // }
 
-  // $ if key does not exist in the hash table, return undefined
+  // $ get the value of the key if key does not exist in the hash table, return undefined
   get(key) {
     let idx = this.hash(key);
     if (this.keyMap[idx]) {
-      for (const keyValuePair of this.keyMap[idx]) {
-        if (keyValuePair[0] === key) {
-          return keyValuePair[1];
+      for (let i = 0; i < this.keyMap[idx].length; i++) {
+        if (this.keyMap[idx][i][0] === key) {
+          return this.keyMap[idx][i][1];
         }
       }
     }
     return null;
   }
+
   // $ if key does not exist in the hash table, return null otherwise return true
   has(key) {
     let idx = this.hash(key);
@@ -138,10 +139,30 @@ const treeIntersection = (tree1, tree2) => {
   // $ return the array
   return arr;
 };
+// write a function called Left Join thawt returns all rows from the left table, even if there are no matches in the right table. This means that if the ON clause matches 0 (zero) records in the right table; the join will still return a row in the result, but with NULL in each column from the right table.
+
+// Arguments: two hash maps
+// The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+// The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+
+// Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
+
+function leftJoin(hashmap1, hashmap2) {
+  let arr = [];
+  for (let key of hashmap1.keys()) {
+    if (hashmap2.has(key)) {
+      arr.push([key, hashmap1.get(key), hashmap2.get(key)]);
+    } else {
+      arr.push([key, hashmap1.get(key), null]);
+    }
+  }
+  return arr;
+}
 
 module.exports = {
   HashTable,
   repeatedWord,
   treeIntersection,
+  leftJoin,
   BinarySearchTree,
 };

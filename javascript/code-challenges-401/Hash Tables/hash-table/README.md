@@ -11,11 +11,21 @@ Implementation of a Hash Table in JavaScript with the functions
 
 ## Whiteboard Process
 
+### Code challenge 30
+
 ![code challenge 30](./img/HashTable.png)
+
+### Code challenge 31
 
 ![code challenge 31](./img/repeatedWord.png)
 
-![code challenge 31](./img/treeInsertion.png)
+### Code challenge 32
+
+![code challenge 32](./img/treeInsertion.png)
+
+### Code challenge 33
+
+![code challenge 33](hashmapLeftJoin.png)
 
 ## Approach & Efficiency
 
@@ -90,11 +100,23 @@ ____
 ___
 
 
-### repeatedWord
+### treeIntersection
 
 - Write a function called tree_intersection that takes two binary trees as parameters.
   - Using your Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
 
+___
+
+### hashmapLeftJoin
+
+- Write a function called left join
+  - Arguments: two hash maps
+    - The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+    - The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+
+- Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
+
+___
 ## Big 0
 
 Big O is O(1) unless there is a collision which would be O(N)
