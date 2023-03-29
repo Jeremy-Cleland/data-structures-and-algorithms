@@ -2,6 +2,7 @@ const {
   repeatedWord,
   HashTable,
   treeIntersection,
+  leftJoin,
   BinarySearchTree,
 } = require('../index');
 
@@ -145,5 +146,23 @@ describe('Hash Table', () => {
 
     // Assert
     expect(treeIntersection(tree1, tree2)).toEqual([5, 3, 7, 2, 4, 6, 8]);
+  });
+
+  it('Tests that the function returns an array with matching keys and values from both hashmaps', () => {
+    const hashmap1 = new HashTable();
+    hashmap1.set('happy', 'joyful');
+    hashmap1.set('sad', 'unhappy');
+    hashmap1.set('angry', 'furious');
+
+    const hashmap2 = new HashTable();
+    hashmap2.set('happy', 'sad');
+    hashmap2.set('sad', 'happy');
+    hashmap2.set('angry', 'calm');
+
+    expect(leftJoin(hashmap1, hashmap2)).toEqual([
+      ['happy', 'joyful', 'sad'],
+      ['sad', 'unhappy', 'happy'],
+      ['angry', 'furious', 'calm'],
+    ]);
   });
 });
