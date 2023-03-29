@@ -1,4 +1,9 @@
-const { repeatedWord, HashTable } = require('../index');
+const {
+  repeatedWord,
+  HashTable,
+  treeIntersection,
+  BinarySearchTree,
+} = require('../index');
 
 describe('Hash Table', () => {
   test('create an empty hash table', () => {
@@ -99,11 +104,46 @@ describe('Hash Table', () => {
     expect(repeatedWord('No repeated words here')).toBe(null);
   });
 
-  // it('tests that function handles words with punctuation or special characters correctly', () => {
-  //   expect(repeatedWord('This comma has a comma, and a period.')).toEqual('a');
-  //   expect(repeatedWord('This string has a hyphenated-word.')).toBe(null);
-  //   expect(repeatedWord(`This string has a word with an apostrophe's.`)).toBe(
-  //     null
-  //   );
-  // });
+  it('Tests that the function returns an empty array when there are no common values in both trees', () => {
+    // $ Create the first tree
+    const tree1 = new BinarySearchTree();
+    tree1.add(5);
+    tree1.add(3);
+    tree1.add(7);
+
+    // $ Create the second tree
+    const tree2 = new BinarySearchTree();
+    tree2.add(10);
+    tree2.add(15);
+    tree2.add(20);
+
+    // $ Call the function
+    const result = treeIntersection(tree1, tree2);
+
+    // $ Assert the result
+    expect(result).toEqual([]);
+  });
+  it('Tests that the function returns an array of all values when both trees are identical', () => {
+    // Arrange
+    const tree1 = new BinarySearchTree();
+    tree1.add(5);
+    tree1.add(3);
+    tree1.add(7);
+    tree1.add(4);
+    tree1.add(6);
+    tree1.add(2);
+    tree1.add(8);
+
+    const tree2 = new BinarySearchTree();
+    tree2.add(5);
+    tree2.add(3);
+    tree2.add(7);
+    tree2.add(2);
+    tree2.add(4);
+    tree2.add(6);
+    tree2.add(8);
+
+    // Assert
+    expect(treeIntersection(tree1, tree2)).toEqual([5, 3, 7, 2, 4, 6, 8]);
+  });
 });

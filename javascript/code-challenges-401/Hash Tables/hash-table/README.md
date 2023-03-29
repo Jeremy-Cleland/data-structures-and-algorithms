@@ -14,10 +14,12 @@ Implementation of a Hash Table in JavaScript with the functions
 ![code challenge 30](./img/HashTable.png)
 
 ![code challenge 31](./img/repeatedWord.png)
+
+![code challenge 31](./img/treeInsertion.png)
+
 ## Approach & Efficiency
 
 ___
-
 ## Main functionalities:
 
 The HashTable class is used to implement a hash table data structure, which allows for efficient storage and retrieval of key-value pairs. The class uses a hash function to map keys to indices in an array, where the corresponding values are stored. The main functionalities of the class include adding key-value pairs, retrieving values by key, checking if a key exists in the hash table, and getting an array of all keys in the hash table.
@@ -86,6 +88,12 @@ ____
   - Return: string
 
 ___
+
+
+### repeatedWord
+
+- Write a function called tree_intersection that takes two binary trees as parameters.
+  - Using your Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
 
 ## Big 0
 

@@ -1,3 +1,5 @@
+const { BinarySearchTree } = require('../../Trees/tree');
+
 class HashTable {
   constructor(size = 61) {
     this.keyMap = new Array(size);
@@ -92,7 +94,7 @@ const repeatedWord = (str) => {
   for (let i = 0; i < arr.length; i++) {
     // $ if the word is already in the hash table
     if (hashTable.has(arr[i])) {
-      return the word
+      // $ return the word
       return arr[i];
       // $ if the word is not in the hash table, add it
     } else {
@@ -103,4 +105,43 @@ const repeatedWord = (str) => {
   return null;
 };
 
-module.exports = { HashTable, repeatedWord };
+// Write a function called tree_intersection that takes two binary trees as parameters.
+// Using your Hashmap implementation as a part of your algorithm, returna all the  sets of values found in both trees.
+const treeIntersection = (tree1, tree2) => {
+  // $ Create a hashtable
+  let hashTable = new HashTable();
+  // $ Create an array to store the values
+  let arr = [];
+  // $ Create a function to traverse the tree
+  const traverse = (node) => {
+    // $ if the node is not null
+    if (node) {
+      // $ if the node is not in the hash table
+      if (!hashTable.has(node.value)) {
+        // $ add the node to the hash table
+        hashTable.set(node.value, node.value);
+        // $ if the node is in the hash table
+      } else {
+        // $ add the node to the array
+        arr.push(node.value);
+      }
+      // $ traverse the left side of the tree
+      traverse(node.left);
+      // $ traverse the right side of the tree
+      traverse(node.right);
+    }
+  };
+  // $ traverse the first tree
+  traverse(tree1.root);
+  // $ traverse the second tree
+  traverse(tree2.root);
+  // $ return the array
+  return arr;
+};
+
+module.exports = {
+  HashTable,
+  repeatedWord,
+  treeIntersection,
+  BinarySearchTree,
+};
