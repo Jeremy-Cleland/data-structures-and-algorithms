@@ -27,6 +27,10 @@ Implementation of a Hash Table in JavaScript with the functions
 
 ![code challenge 33](hashmapLeftJoin.png)
 
+
+### Code challenge 34
+
+![code challenge 33](commonWord.png)
 ## Approach & Efficiency
 
 ___

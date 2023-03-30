@@ -106,8 +106,61 @@ const repeatedWord = (str) => {
   return null;
 };
 
-// Write a function called tree_intersection that takes two binary trees as parameters.
-// Using your Hashmap implementation as a part of your algorithm, returna all the  sets of values found in both trees.
+function mostCommonWord(str) {
+  // $ Create a hashtable
+  let hashTable = new HashTable();
+  // $ Create a variable to hold the highest word
+  let tempWord = '';
+  // $ Create a variable to hold the highest count
+  let tempCounter = 0;
+  // $ split the string into an array
+  let words = str.split(' ');
+  // $ loop through the array
+  for (let i = 0; i < words.length; i++) {
+    // $ if the word is already in the hash table
+    let word = words[i].toLowerCase().replace(/[^a-zA-Z]/g, '');
+    // $ if the word is already in the hash table
+    if (word === '') {
+      continue;
+    }
+    // $
+    if (hashTable.has(word)) {
+      //$ increment the value
+      hashTable.set(word, hashTable.get(word) + 1);
+      // $ if the count is higher than the highest count
+      if (hashTable.get(word) > tempCounter) {
+        // $ set the highest count to the count
+        tempCounter = hashTable.get(word);
+        // $ set the highest word to the word
+        tempWord = word;
+      }
+    } else {
+      hashTable.set(word, 1);
+    }
+  }
+  return tempWord;
+}
+
+function uniqueCharacters(str) {
+  // $ Create a hashtable
+  let hashTable = new HashTable();
+  // $ split the string into an array
+  let arr = str.split('');
+  // $ loop through the array
+  for (let i = 0; i < arr.length; i++) {
+    // $ if the word is already in the hash table
+    if (hashTable.has(arr[i])) {
+      // $ return false
+      return false;
+      // $ if the word is not in the hash table, add it
+    } else {
+      hashTable.set(arr[i], arr[i]);
+    }
+  }
+  // $ return true
+  return true;
+}
+
 const treeIntersection = (tree1, tree2) => {
   // $ Create a hashtable
   let hashTable = new HashTable();
@@ -139,13 +192,6 @@ const treeIntersection = (tree1, tree2) => {
   // $ return the array
   return arr;
 };
-// write a function called Left Join thawt returns all rows from the left table, even if there are no matches in the right table. This means that if the ON clause matches 0 (zero) records in the right table; the join will still return a row in the result, but with NULL in each column from the right table.
-
-// Arguments: two hash maps
-// The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
-// The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
-
-// Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
 
 function leftJoin(hashmap1, hashmap2) {
   let arr = [];
@@ -164,5 +210,7 @@ module.exports = {
   repeatedWord,
   treeIntersection,
   leftJoin,
+  uniqueCharacters,
+  mostCommonWord,
   BinarySearchTree,
 };

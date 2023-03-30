@@ -3,6 +3,7 @@ const {
   HashTable,
   treeIntersection,
   leftJoin,
+  mostCommonWord,
   BinarySearchTree,
 } = require('../index');
 
@@ -164,5 +165,25 @@ describe('Hash Table', () => {
       ['sad', 'unhappy', 'happy'],
       ['angry', 'furious', 'calm'],
     ]);
+  });
+
+  // Tests that the function removes non-alphabetic characters from words before counting. tags: [happy path]
+  it('test_non_alphabetic_chars', () => {
+    const str = 'The quick brown fox jumps over the lazy dog.';
+    const expected = 'the';
+    const result = mostCommonWord(str);
+    expect(result).toEqual(expected);
+  });
+  // Tests that the function returns the correct word when given a string containing only one valid word. tags: [edge case, happy path]
+  it('test_single_word', () => {
+    const str = 'hello world, hello';
+    const expected = 'hello';
+    const result = mostCommonWord(str);
+    expect(result).toEqual(expected);
+  });
+  // Tests that the function correctly handles input strings with multiple valid words with the same frequency. tags: [happy path]
+  it('test_multiple_common_words', () => {
+    const str = 'the cat in the hat had a bat and a rat';
+    expect(mostCommonWord(str)).toBe('the');
   });
 });
