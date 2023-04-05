@@ -121,35 +121,29 @@ class Graph {
   }
 }
 
-const graph = new Graph();
-
-const A = graph.addVertex('A');
-const B = graph.addVertex('B');
-const C = graph.addVertex('C');
-const D = graph.addVertex('D');
-const E = graph.addVertex('E');
-const F = graph.addVertex('F');
-const G = graph.addVertex('G');
-const H = graph.addVertex('H');
-
-graph.addDirectedEdge(A, B);
-graph.addDirectedEdge(A, D);
-graph.addDirectedEdge(A, C);
-graph.addDirectedEdge(B, G);
-graph.addDirectedEdge(D, F);
-graph.addDirectedEdge(D, H);
-graph.addDirectedEdge(F, H);
-graph.addDirectedEdge(C, H);
-graph.addDirectedEdge(F, E);
-
-graph.breadthFirst(A, console.log);
-console.log('-------------------');
-graph.depthFirst(A, console.log);
-console.log('-------------------');
-console.log(graph.size());
-
-module.exports = {
-  Graph,
-  Vertex,
-  Edge,
+const businessTrip = (graph, cities) => {
+  let cost = 0;
+  let currentCity = null;
+  let nextCity = null;
+  let connection = false;
+  while (cities.length) {
+    currentCity = cities.shift();
+    if (!cities.length) {
+      return cost;
+    } else {
+      nextCity = cities[0];
+      const neighbors = graph.getNeighbors(currentCity);
+      for (let neighbor of neighbors) {
+        if (neighbor.vertex === nextCity) {
+          cost += neighbor.weight;
+          connection = true;
+        }
+      }
+      if (!connection) return null;
+      connection = false;
+    }
+  }
+  return cost;
 };
+
+module.exports = { Graph, Vertex, Edge, businessTrip };
