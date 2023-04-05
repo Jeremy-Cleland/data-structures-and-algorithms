@@ -5,9 +5,10 @@ Implementation of a Hash Table in JavaScript with the functions
 
 ## Whiteboard Process
 
-### Code challenge 30
+### Code challenge
 
-![code challenge 30](./img/HashTable.png)
+![code challenge 30](./img/challenge36.png)
+![code challenge 30](./img/challenge37.png)
 
 ## Approach & Efficiency
 

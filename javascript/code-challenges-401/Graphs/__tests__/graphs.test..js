@@ -1,4 +1,4 @@
-const { Graph, Vertex, Edge } = require('../index.js');
+const { Graph, Vertex, Edge, businessTrip } = require('../index.js');
 
 describe('Graph', () => {
   it('Tests that the addvertex method adds a new vertex to the graph and that the size of the graph increases by 1', () => {
@@ -100,5 +100,27 @@ describe('Graph', () => {
     graph.addDirectedEdge(vertexA, vertexB);
 
     expect(graph.size()).toBe(3);
+  });
+
+  it('should display the business trip cost', () => {
+    const graph = new Graph();
+    const pandora = graph.addVertex('Pandora');
+    const arendelle = graph.addVertex('Arendelle');
+    const metroville = graph.addVertex('Metroville');
+    const monstroplolis = graph.addVertex('Monstroplolis');
+    const naboo = graph.addVertex('Naboo');
+    const narnia = graph.addVertex('Narnia');
+    graph.addDirectedEdge(pandora, arendelle, 150);
+    graph.addDirectedEdge(pandora, metroville, 82);
+    graph.addDirectedEdge(arendelle, metroville, 99);
+    graph.addDirectedEdge(arendelle, monstroplolis, 42);
+    graph.addDirectedEdge(metroville, monstroplolis, 105);
+    graph.addDirectedEdge(metroville, naboo, 26);
+    graph.addDirectedEdge(metroville, narnia, 37);
+    graph.addDirectedEdge(monstroplolis, naboo, 73);
+    graph.addDirectedEdge(naboo, narnia, 250);
+    const cities = [pandora, arendelle, monstroplolis, naboo];
+    const result = businessTrip(graph, cities);
+    expect(result).toEqual(265);
   });
 });
