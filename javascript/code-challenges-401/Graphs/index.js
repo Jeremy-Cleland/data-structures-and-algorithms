@@ -178,4 +178,4 @@ const isConnected = (graph, nodeA, nodeB) => {
   return false;
 };
 
-module.exports = { Graph, Vertex, Edge, businessTrip, isConnected };
+module.exports = { Graph, Vertex, Edge, isConnected, businessTrip };
