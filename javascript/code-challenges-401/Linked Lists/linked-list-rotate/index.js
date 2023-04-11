@@ -132,6 +132,42 @@ const zipLists = (list1, list2) => {
   return list3;
 };
 
+const reverseLinkedList = (head) => {
+  let node = head,
+    previous,
+    tmp;
+
+  while (node) {
+    tmp = node.next;
+
+    // reverse the pointer to previous node
+    node.next = previous;
+
+    // walk down the linked list
+    previous = node;
+    node = tmp;
+  }
+  return previous;
+};
+
+function removeValue(list, value) {
+  let current = list.head;
+  if (current.value === value) {
+    list.head = current.next;
+    list.length--;
+    return list.length;
+  }
+  while (current.next) {
+    if (current.next.value === value) {
+      current.next = current.next.next;
+      list.length--;
+      return list.length;
+    } else {
+      current = current.next;
+    }
+  }
+}
+
 function rotateLinkedList(list, k) {
   if (k === 0) return;
 
