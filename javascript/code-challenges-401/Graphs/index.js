@@ -93,6 +93,8 @@ class Graph {
     return visited;
   }
 
+  // $ Define a method called depthFirst that takes in a starting vertex and a callback function. Arguments: starting vertex, callback function The function should traverse the graph using the depth-first approach, invoking the callback function with each vertex that is visited
+
   depthFirst(root, callback) {
     const stack = [root];
     const visited = new Set();
@@ -120,6 +122,7 @@ class Graph {
     return visited;
   }
 }
+// $ Define a method called businessTrip that takes in a graph and an array of city names. Arguments: graph, array of city names The function should return the total cost of the trip. If the trip is not possible, return $0 with a message
 
 const businessTrip = (graph, cities) => {
   let cost = 0;
@@ -146,4 +149,33 @@ const businessTrip = (graph, cities) => {
   return cost;
 };
 
-module.exports = { Graph, Vertex, Edge, businessTrip };
+// $ Define a method called isConnected that takes in a graph and two nodes. Arguments: graph, two nodes The function should return a boolean indicating whether or not the two nodes are connected
+
+const isConnected = (graph, nodeA, nodeB) => {
+  const stack = [];
+  const visited = new Set();
+
+  stack.push(nodeA);
+  visited.add(nodeA);
+  let currentNode = null;
+
+  while (stack.length) {
+    currentNode = stack.pop();
+
+    if (currentNode === nodeB) return true;
+
+    const neighbors = this.getNeighbors(currentNode);
+    for (let neighbor of neighbors) {
+      const neighborNode = neighbor.vertex;
+      if (visited.has(neighborNode)) {
+        continue;
+      } else {
+        visited.add(neighborNode);
+      }
+      stack.push(neighborNode);
+    }
+  }
+  return false;
+};
+
+module.exports = { Graph, Vertex, Edge, isConnected, businessTrip };

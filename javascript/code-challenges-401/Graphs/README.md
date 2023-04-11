@@ -7,8 +7,9 @@ Implementation of a Hash Table in JavaScript with the functions
 
 ### Code challenge
 
-![code challenge 30](./img/challenge36.png)
-![code challenge 30](./img/challenge37.png)
+![code challenge 36](./img/challenge36.png)
+![code challenge 37](./img/challenge37.png)
+![code challenge 39](./img/challenge39.png)
 
 ## Approach & Efficiency
 
