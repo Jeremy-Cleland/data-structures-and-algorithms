@@ -1,18 +1,5 @@
 'use strict';
 
-/* Binary Search Tree!!
- *
- * Nodes that will go on the Binary Tree.
- * They consist of the data in them, the node to the left, the node
- * to the right, and the parent from which they came from.
- *
- * A binary tree is a data structure in which an element
- * has two successors(children). The left child is usually
- * smaller than the parent, and the right child is usually
- * bigger.
- */
-
-// class Node
 class Node {
   constructor(value) {
     this.value = value;
@@ -78,40 +65,6 @@ class BinaryTree {
     // return the results
     return results;
   }
-
-  // get max value in tree (not BST)
-  max() {
-    let max = this.root.value;
-    let _traverse = (node) => {
-      if (node.value > max) {
-        max = node.value;
-      }
-      if (node.left) _traverse(node.left);
-      if (node.right) _traverse(node.right);
-    };
-    _traverse(this.root);
-    return max;
-  }
-  min() {
-    // define a variable to hold the min value
-    let min = this.root.value;
-    // define a helper function
-    let _traverse = (node) => {
-      // base case - if the node value is less than the min value
-      if (node.value < min) {
-        // set the min value to the node value
-        min = node.value;
-      }
-      // recursive case - if the node has a left child
-      if (node.left) _traverse(node.left);
-      // recursive case - if the node has a right child
-      if (node.right) _traverse(node.right);
-    };
-    // call the helper function
-    _traverse(this.root);
-    // return the min value
-    return min;
-  }
 }
 
 // ***Binary Search Tree ***
@@ -160,21 +113,6 @@ class BinarySearchTree extends BinaryTree {
       }
     }
     return false;
-  }
-
-  max() {
-    let current = this.root;
-    let max = current.value;
-    while (current) {
-      if (current.value > max) {
-        max = current.value;
-      }
-      if (current.right) {
-        current = current.right;
-      } else {
-        return max;
-      }
-    }
   }
 }
 
