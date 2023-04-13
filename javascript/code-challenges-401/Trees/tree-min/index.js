@@ -92,6 +92,7 @@ class BinaryTree {
     _traverse(this.root);
     return max;
   }
+
   min() {
     // define a variable to hold the min value
     let min = this.root.value;
